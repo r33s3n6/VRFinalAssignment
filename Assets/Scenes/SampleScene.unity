@@ -177,7 +177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   from: 7
   to: 9
-  type: 0
+  type: 2
 --- !u!114 &30874834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -326,7 +326,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   from: 7
   to: 8
-  type: 0
+  type: 2
 --- !u!114 &129028748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -899,7 +899,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   from: 10
   to: 7
-  type: 0
+  type: 2
 --- !u!114 &397562860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2663,6 +2663,7 @@ MonoBehaviour:
   - {x: 0, y: 90, z: 0}
   - {x: 0, y: 270, z: 0}
   - {x: 0, y: 180, z: 0}
+  direction: {x: 0, y: 0, z: 0}
 --- !u!1 &979939594
 GameObject:
   m_ObjectHideFlags: 0
@@ -3108,7 +3109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   from: 9
   to: 7
-  type: 0
+  type: 2
 --- !u!114 &1061195795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3488,7 +3489,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   from: 7
   to: 6
-  type: 0
+  type: 1
 --- !u!114 &1250471070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4306,7 +4307,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   from: 7
   to: 10
-  type: 0
+  type: 2
 --- !u!114 &1486300456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4455,7 +4456,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   from: 6
   to: 7
-  type: 0
+  type: 1
 --- !u!114 &1533416566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6238,7 +6239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   from: 8
   to: 7
-  type: 0
+  type: 2
 --- !u!114 &1996778210
 MonoBehaviour:
   m_ObjectHideFlags: 0

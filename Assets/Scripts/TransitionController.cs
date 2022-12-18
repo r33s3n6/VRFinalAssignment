@@ -12,10 +12,9 @@ public class TransitionController : MonoBehaviour
     public Material[] skyboxMaterial;
     public GameObject[] canvas;
     public Vector3[] cameraPos, cameraOrient;
-    private int[,] angleOffset = new int[11, 11];
     private Transform cameraTransform;
     private CanvasGroup canvasGroup;
-    public Vector3 direction;
+    public Vector3 direction, orientation_from, orientation_to;
     void Start()
     {
         cameraTransform = GameObject.Find("OVRCameraRig").GetComponent<Transform>();
@@ -25,15 +24,6 @@ public class TransitionController : MonoBehaviour
             canvas[i].SetActive(false);
         RenderSettings.skybox = skyboxMaterial[SceneData.Instance.target];
         cameraTransform.rotation = Quaternion.Euler(SceneData.Instance.angle_to);
-
-        angleOffset[0, 1] = -90; angleOffset[1, 0] = 90;
-        angleOffset[0, 2] = -135; angleOffset[2, 0] = 135;
-        angleOffset[0, 4] = -75; angleOffset[4, 0] = 75;
-        angleOffset[1, 5] = 135; angleOffset[5, 1] = -135;
-        angleOffset[5, 6] = -45; angleOffset[6, 5] = 45;
-        angleOffset[6, 7] = -135; angleOffset[7, 6] = 135;
-        angleOffset[7, 8] = 180; angleOffset[8, 7] = 180;
-        angleOffset[7, 10] = 90; angleOffset[10, 7] = -90;
 
         StartCoroutine("FadeIn");
     }
@@ -46,27 +36,30 @@ public class TransitionController : MonoBehaviour
     public void Move(int from, int to, int type)
     {
         Debug.Log("Move from " + from.ToString() + " to " + to.ToString() + " type " + type.ToString());
-        if (type == 1)
+        if (type == 0)
+        {
+            RenderSettings.skybox = skyboxMaterial[to];
+            cameraTransform.Rotate(new Vector3(0, cameraOrient[from].y - cameraOrient[to].y, 0));
+            canvas[from].SetActive(false); canvas[to].SetActive(true);
+            return;
+        }
+        else if (type == 1)
         {
             SceneData.Instance.pos_from = cameraPos[from];
             SceneData.Instance.pos_to = cameraPos[to];
             SceneData.Instance.orient_from = cameraOrient[from] + cameraTransform.rotation.eulerAngles;
             SceneData.Instance.target = to;
-            SceneData.Instance.angle_to = cameraTransform.rotation.eulerAngles + new Vector3(0, angleOffset[from, to], 0);
+            SceneData.Instance.angle_to = cameraTransform.rotation.eulerAngles + new Vector3(0, cameraOrient[from].y - cameraOrient[to].y, 0);
             StartCoroutine("FadeOut");
             return;
         }
         else if (type == 2)
         {
             direction = Vector3.Normalize(cameraPos[to] - cameraPos[from]);
+            orientation_from = cameraOrient[from];
+            orientation_to = cameraOrient[to];
             // TODO
             return;
-        }
-        else
-        {
-            RenderSettings.skybox = skyboxMaterial[to];
-            cameraTransform.Rotate(new Vector3(0, angleOffset[from, to], 0));
-            canvas[from].SetActive(false); canvas[to].SetActive(true);
         }
     }
 
