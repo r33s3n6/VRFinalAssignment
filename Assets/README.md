@@ -4,7 +4,7 @@
 
 
 
-<img src="D:\Acquah\indoor-scene-roaming\VRFinalAssignment\Assets\README.assets\image-20221218211206547.png" alt="image-20221218211206547" style="zoom:67%;" />
+<img src="README.assets\image-20221218211206547.png" alt="image-20221218211206547" style="zoom:67%;" />
 
 | 编号 | 位置            | 3D模型下坐标  | 相机朝向（Rotate-y） |
 | ---- | --------------- | ------------- | -------------------- |
