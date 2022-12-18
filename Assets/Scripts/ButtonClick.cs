@@ -5,11 +5,11 @@ using UnityEngine;
 public class ButtonClick : MonoBehaviour
 {
     public int from, to, type;
-    private SkyboxController skyboxController;
+    private TransitionController transitionController;
     // Start is called before the first frame update
     void Start()
     {
-        skyboxController = GameObject.Find("SkyboxController").GetComponent<SkyboxController>();
+        transitionController = GameObject.Find("TransitionController").GetComponent<TransitionController>();
     }
 
     // Update is called once per frame
@@ -20,6 +20,6 @@ public class ButtonClick : MonoBehaviour
 
     public void Click()
     {
-        skyboxController.Move(from, to, type);
+        transitionController.Move(from, to, type);
     }
 }

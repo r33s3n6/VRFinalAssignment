@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
 using static UnityEngine.GraphicsBuffer;
 
-public class SkyboxController : MonoBehaviour
+public class TransitionController : MonoBehaviour
 {
     public Material[] skyboxMaterial;
     public GameObject[] canvas;
@@ -14,7 +15,7 @@ public class SkyboxController : MonoBehaviour
     private int[,] angleOffset = new int[11, 11];
     private Transform cameraTransform;
     private CanvasGroup canvasGroup;
-
+    public Vector3 direction;
     void Start()
     {
         cameraTransform = GameObject.Find("OVRCameraRig").GetComponent<Transform>();
@@ -57,6 +58,8 @@ public class SkyboxController : MonoBehaviour
         }
         else if (type == 2)
         {
+            direction = Vector3.Normalize(cameraPos[to] - cameraPos[from]);
+            // TODO
             return;
         }
         else
