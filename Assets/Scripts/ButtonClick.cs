@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ButtonClick : MonoBehaviour
 {
-    public int from, to;
+    public int from, to, type;
     private SkyboxController skyboxController;
     // Start is called before the first frame update
     void Start()
@@ -20,6 +20,6 @@ public class ButtonClick : MonoBehaviour
 
     public void Click()
     {
-        skyboxController.Move(from, to);
+        skyboxController.Move(from, to, type);
     }
 }
