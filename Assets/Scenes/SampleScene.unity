@@ -326,7 +326,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   from: 7
   to: 8
-  type: 2
+  type: 1
 --- !u!114 &129028748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1439,7 +1439,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   from: 3
   to: 2
-  type: 0
+  type: 2
 --- !u!114 &591490595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1782,7 +1782,6 @@ MonoBehaviour:
   cameraTransform: {fileID: 2004991447}
   shader: {fileID: 4800000, guid: 34f6a91dac184e44a8ad30065f347574, type: 3}
   material: {fileID: 0}
-  orientation: {x: 0, y: 0, z: 0}
 --- !u!1 &630452318
 GameObject:
   m_ObjectHideFlags: 0
@@ -2080,7 +2079,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   from: 2
   to: 3
-  type: 0
+  type: 2
 --- !u!114 &695959399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6358,7 +6357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   from: 8
   to: 7
-  type: 2
+  type: 1
 --- !u!114 &1996778210
 MonoBehaviour:
   m_ObjectHideFlags: 0

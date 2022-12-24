@@ -53,7 +53,7 @@ public class MoveController : MonoBehaviour
 
     IEnumerator FadeIn()
     {
-        for (float f = 1f; f >= 0; f -= 0.01f)
+        for (float f = 1f; f >= 0; f -= 0.02f)
         {
             canvasGroup.alpha = f;
             yield return null;
@@ -63,7 +63,7 @@ public class MoveController : MonoBehaviour
 
     IEnumerator FadeOut()
     {
-        for (float f = 0f; f <= 1; f += 0.01f)
+        for (float f = 0f; f <= 1; f += 0.02f)
         {
             canvasGroup.alpha = f;
             yield return null;
